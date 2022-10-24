@@ -1,0 +1,122 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=2]
+[ext_resource path="res://World/bg/clouds.png" type="Texture" id=3]
+[ext_resource path="res://World/bg/sky.png" type="Texture" id=4]
+[ext_resource path="res://World/bg/back_buildings.png" type="Texture" id=5]
+[ext_resource path="res://World/bg/front_buildings.png" type="Texture" id=6]
+[ext_resource path="res://snowball_icon.png" type="Texture" id=7]
+[ext_resource path="res://UI/SnowballsVisualizer.gd" type="Script" id=8]
+[ext_resource path="res://UI/Joystick.png" type="Texture" id=9]
+[ext_resource path="res://Joystick.gd" type="Script" id=10]
+[ext_resource path="res://UI/movement_button.png" type="Texture" id=11]
+[ext_resource path="res://snowball.png" type="Texture" id=12]
+[ext_resource path="res://Player/DefaultPlayerMovementData.tres" type="Resource" id=13]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+moveData = ExtResource( 13 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 0, -90 )
+motion_scale = Vector2( 0, 0 )
+motion_offset = Vector2( 200, 0 )
+motion_mirroring = Vector2( 400, 0 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 0, -78.694 )
+motion_scale = Vector2( 0.1, 0 )
+motion_mirroring = Vector2( 400, 0 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 0, -64.824 )
+motion_scale = Vector2( 0.15, 0 )
+motion_mirroring = Vector2( 400, 0 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource( 6 )
+centered = false
+offset = Vector2( 0, 3.569 )
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="SnowballVisualizer" type="HBoxContainer" parent="CanvasLayer2"]
+anchor_right = 1.0
+margin_left = 6.0
+margin_top = 6.0
+grow_horizontal = 0
+script = ExtResource( 8 )
+visulaizerIcon = ExtResource( 7 )
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer2"]
+position = Vector2( 0, 130 )
+normal = ExtResource( 11 )
+passby_press = true
+action = "ui_left"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="CanvasLayer2"]
+position = Vector2( 100, 130 )
+scale = Vector2( -1, 1 )
+normal = ExtResource( 11 )
+passby_press = true
+action = "ui_right"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="CanvasLayer2"]
+position = Vector2( 190, 150 )
+rotation = -1.5708
+scale = Vector2( -0.6, 1 )
+normal = ExtResource( 11 )
+passby_press = true
+action = "ui_up"
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+margin_left = 240.0
+margin_top = 100.0
+margin_right = 310.0
+margin_bottom = 170.0
+script = ExtResource( 10 )
+playerNodePath = NodePath("../../Player")
+
+[node name="Timer" type="Timer" parent="CanvasLayer2/Control"]
+wait_time = 0.3
+one_shot = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+expand = true
+
+[node name="Paddle" type="TextureRect" parent="CanvasLayer2/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -12.5
+margin_top = -12.5
+margin_right = 12.5
+margin_bottom = 12.5
+texture = ExtResource( 12 )
+expand = true
