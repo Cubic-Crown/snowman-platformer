@@ -13,7 +13,6 @@ var coyote_jump = false
 var on_door = false
 var has_shot = false
 
-onready var animatedSprite: = $AnimatedSprite
 onready var ladderCheck: = $LadderCheck
 onready var jumpBufferTimer: = $JumpBufferTimer
 onready var coyoteJumpTimer: = $CoyoteJumpTimer
@@ -40,17 +39,17 @@ func move_state(input, delta):
 	if not horizontal_move(input):
 		if not has_shot :
 			apply_friction(delta)
-			animatedSprite.animation = "Idle"
+#			animatedSprite.animation = "Idle"
 	else :
 		apply_acceleration(input.x, delta)
-		animatedSprite.animation = "Run"
-		animatedSprite.flip_h = input.x > 0
+#		animatedSprite.animation = "Run"
+#		animatedSprite.flip_h = input.x > 0
 	
 	if is_on_floor():
 		reset_double_jump()
 		has_shot = false
-	else:
-		animatedSprite.animation = "Jump"
+#	else:
+#		animatedSprite.animation = "Jump"
 	
 	if can_jump():
 		input_jump()
@@ -66,9 +65,9 @@ func move_state(input, delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	var just_landed = is_on_floor() and was_in_air
-	if just_landed:
-		animatedSprite.animation = "Run"
-		animatedSprite.frame = 1
+#	if just_landed:
+#		animatedSprite.animation = "Run"
+#		animatedSprite.frame = 1
 	
 	var just_left_ground = not is_on_floor() and was_on_floor
 	if just_left_ground and velocity.y >= 0:
@@ -77,10 +76,10 @@ func move_state(input, delta):
 
 func climb_state(input):
 	if not is_on_ladder(): state = MOVE
-	if input.length() != 0:
-		animatedSprite.animation = "Run"
-	else:
-		animatedSprite.animation = "Idle"
+#	if input.length() != 0:
+#		animatedSprite.animation = "Run"
+#	else:
+#		animatedSprite.animation = "Idle"
 	velocity = input * moveData.CLIMB_SPEED
 	velocity = move_and_slide(velocity, Vector2.UP)
 

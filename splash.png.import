@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/back_buildings.png-0f449e72447e30b515f4a8c501a26c9f.stex"
+path="res://.import/splash.png-929ed8a00b89ba36c51789452f874c77.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/bg/back_buildings.png"
-dest_files=[ "res://.import/back_buildings.png-0f449e72447e30b515f4a8c501a26c9f.stex" ]
+source_file="res://splash.png"
+dest_files=[ "res://.import/splash.png-929ed8a00b89ba36c51789452f874c77.stex" ]
 
 [params]
 

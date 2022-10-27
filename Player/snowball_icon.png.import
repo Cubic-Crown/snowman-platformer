@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/characters_packed.png-890290c811414ed077a6b10fd28e12f1.stex"
+path="res://.import/snowball_icon.png-4ca27f0365d4cf8ca3df83ae441d1850.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters_packed.png"
-dest_files=[ "res://.import/characters_packed.png-890290c811414ed077a6b10fd28e12f1.stex" ]
+source_file="res://Player/snowball_icon.png"
+dest_files=[ "res://.import/snowball_icon.png-4ca27f0365d4cf8ca3df83ae441d1850.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/snowman_head.png-03e6093f382485e821e6ab48f5dae8d5.stex"
+path="res://.import/tracteur.png-0363cdd02c5c133a5a484e18189d2875.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://snowman_head.png"
-dest_files=[ "res://.import/snowman_head.png-03e6093f382485e821e6ab48f5dae8d5.stex" ]
+source_file="res://Enemies/tracteur.png"
+dest_files=[ "res://.import/tracteur.png-0363cdd02c5c133a5a484e18189d2875.stex" ]
 
 [params]
 

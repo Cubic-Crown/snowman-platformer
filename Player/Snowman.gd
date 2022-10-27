@@ -6,13 +6,13 @@ var tex : Image
 
 export(int) var radius setget set_radius, get_radius
 var rotation_speed := 0.0
-var can_shoot = false
+var snowballsData := preload("res://Data/snowballs.tres")
 
 func set_radius(v):
 	if v>SnowBallData.MAX_RADIUS or v<SnowBallData.MIN_RADIUS : return
 	Events.emit_signal("snow_quantity_change", v-SnowBallData.MIN_RADIUS)
 	radius = v
-	can_shoot = v!=SnowBallData.MIN_RADIUS
+	snowballsData.canShoot = v!=SnowBallData.MIN_RADIUS
 	update()
 
 func get_radius():
@@ -32,6 +32,8 @@ func shoot_handler(_direction) :
 func _physics_process(delta):
 	if Engine.is_editor_hint() : return
 	var player = get_parent().get_parent()
+#	var col = player.get_last_slide_collision().collider as  CollisionObject2D 
+#	if col!=null : print(col.get_collision_layer_bit(23)) 
 	if player.is_on_floor() and (not player.is_on_wall()) and (Input.is_action_pressed("ui_left") != Input.is_action_pressed("ui_right")) :
 		counter+=1
 		rotation_speed += 3*delta * (1-2*Input.get_action_strength("ui_left"))

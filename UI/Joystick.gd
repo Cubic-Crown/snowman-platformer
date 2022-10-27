@@ -2,8 +2,9 @@ extends Control
 
 var touched := false
 var touch = null
+var can_shoot := false
 
-export(NodePath) var playerNodePath
+var snowballsData := preload("res://Data/snowballs.tres")
 
 var pos := Vector2.ZERO
 
@@ -15,7 +16,8 @@ func _physics_process(delta):
 	var relative_pos = pos-rect_global_position-rect_size/2
 	var dir = relative_pos if relative_pos.length()<get_rect().size.x/2 else (relative_pos).normalized()*get_rect().size.x/2
 	$Paddle.rect_position = $Paddle.rect_position.move_toward(offset+(dir if touched else Vector2.ZERO), delta*500)
-
+	if dir.length()>get_rect().size.x/2*0.9 and $Timer.is_stopped() : shoot()
+	if dir.length()<get_rect().size.x/2*0.9 : $Timer.stop()
 
 func _input(event):
 	if event is InputEventScreenTouch:
@@ -23,7 +25,7 @@ func _input(event):
 			touch = event.index
 			touched = true
 			pos = event.position
-			shoot()
+#			shoot()
 		elif touched and event.index==touch and not event.pressed :
 			touch=null
 			touched=false
@@ -35,8 +37,7 @@ func _input(event):
 
 
 func shoot() :
-	if (get_node(playerNodePath)==null) : return
-	if not get_node(playerNodePath).get_node("CollisionShape2D").get_child(0).can_shoot : return
+	if not snowballsData.canShoot : return
 	if not touched : return
 	Events.emit_signal("shoot", (pos-rect_global_position-rect_size/2).normalized())
 	$Timer.start()

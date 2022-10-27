@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sky.png-b59b3925571f5bf60f68d5ee9dc8d639.stex"
+path="res://.import/truck.png-fd9abbd0f75c9d243390feffa593e8c9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/bg/sky.png"
-dest_files=[ "res://.import/sky.png-b59b3925571f5bf60f68d5ee9dc8d639.stex" ]
+source_file="res://Enemies/truck.png"
+dest_files=[ "res://.import/truck.png-fd9abbd0f75c9d243390feffa593e8c9.stex" ]
 
 [params]
 

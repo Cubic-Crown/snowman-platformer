@@ -7,6 +7,9 @@ onready var ledgeCheckRight: = $LedgeCheckRight
 onready var ledgeCheckLeft: = $LedgeCheckLeft
 onready var sprite: = $AnimatedSprite
 
+func _ready() :
+	$AnimatedSprite.play("Walking")
+
 func _physics_process(delta):
 	var found_wall = is_on_wall()
 	var found_ledge = not ledgeCheckRight.is_colliding() or not ledgeCheckLeft.is_colliding()

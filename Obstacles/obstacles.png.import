@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/snowball.png-8ccc5f6d87b3bb0be2f47b2bfaf43f82.stex"
+path="res://.import/obstacles.png-578ae5e4e5bd781d689de548935fd347.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://snowball.png"
-dest_files=[ "res://.import/snowball.png-8ccc5f6d87b3bb0be2f47b2bfaf43f82.stex" ]
+source_file="res://Obstacles/obstacles.png"
+dest_files=[ "res://.import/obstacles.png-578ae5e4e5bd781d689de548935fd347.stex" ]
 
 [params]
 
