@@ -57,7 +57,8 @@ func update() :
 		for y in range(s) :
 			var xx = x - s/2
 			var yy = y - s/2
-			var col = Color(223.0/255, 246.0/255, 245.0/255) if sqrt(xx*xx+yy*yy)<radius-2 else Color(52/255.0,85/255.0,81.0/255) if sqrt(xx*xx+yy*yy)<radius else Color(0,0,0,0)
+			var col = Color(223.0/255, 246.0/255, 245.0/255) if sqrt(xx*xx+yy*yy)<radius else Color(0,0,0,0)
+#			var col = Color(223.0/255, 246.0/255, 245.0/255) if sqrt(xx*xx+yy*yy)<radius-2 else Color(52/255.0,85/255.0,81.0/255) if sqrt(xx*xx+yy*yy)<radius else Color(0,0,0,0)
 			img.set_pixel(x,y,col)
 	img.unlock()
 	var tex = ImageTexture.new()
