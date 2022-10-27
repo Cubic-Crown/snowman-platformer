@@ -18,7 +18,7 @@ func _ready():
 func _on_player_died():
 	timer.start(1.0)
 	yield(timer, "timeout")
-	var player = PlayerScene.instance()
+	player = PlayerScene.instance()
 	player.global_position = player_spawn_location
 	add_child(player)
 	player.connect_camera(camera)
