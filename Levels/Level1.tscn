@@ -83,7 +83,7 @@ angleOffset = 0
 
 [node name="Sprite" parent="." index="12" instance=ExtResource( 10 )]
 position = Vector2( 367, -94 )
-rotation = 16948.3
+rotation = 33370.3
 
 [node name="Tree" parent="." index="13" instance=ExtResource( 5 )]
 position = Vector2( 541, -20 )

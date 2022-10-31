@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Player/FastPlayerMovementData.tres" type="Resource" id=1]
-[ext_resource path="res://Player/face.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Entities/Players/FastPlayerMovementData.tres" type="Resource" id=1]
+[ext_resource path="res://Assets/Entities/Players/snowball.png" type="Texture" id=2]
 [ext_resource path="res://Player/Player.gd" type="Script" id=3]
 [ext_resource path="res://Player/Snowman.gd" type="Script" id=4]
-[ext_resource path="res://Player/snowman_head.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Entities/Players/snowman_head.png" type="Texture" id=5]
 [ext_resource path="res://Player/ShootManager.gd" type="Script" id=6]
 [ext_resource path="res://Player/SnowBall.tscn" type="PackedScene" id=7]
 

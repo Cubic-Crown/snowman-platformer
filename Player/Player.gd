@@ -3,7 +3,7 @@ class_name Player
 
 enum { MOVE, CLIMB }
 
-export(Resource) var moveData = preload("res://Player/DefaultPlayerMovementData.tres") as PlayerMovementData
+export(Resource) var moveData = preload("res://Assets/Entities/Players/DefaultPlayerMovementData.tres") as PlayerMovementData
 
 var velocity = Vector2.ZERO
 var state = MOVE
@@ -13,10 +13,10 @@ var coyote_jump = false
 var on_door = false
 var has_shot = false
 
-onready var ladderCheck: = $LadderCheck
-onready var jumpBufferTimer: = $JumpBufferTimer
-onready var coyoteJumpTimer: = $CoyoteJumpTimer
-onready var remoteTransform2D: = $RemoteTransform2D
+onready var ladderCheck := $LadderCheck
+onready var jumpBufferTimer := $JumpBufferTimer
+onready var coyoteJumpTimer := $CoyoteJumpTimer
+onready var remoteTransform2D := $RemoteTransform2D
 
 func _ready() :
 	Events.connect("shoot", self, "snowball_knockback")
@@ -64,7 +64,7 @@ func move_state(input, delta):
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
-	var just_landed = is_on_floor() and was_in_air
+	var _just_landed = is_on_floor() and was_in_air
 #	if just_landed:
 #		animatedSprite.animation = "Run"
 #		animatedSprite.frame = 1
@@ -89,7 +89,7 @@ func hurt() :
 	else : player_die()
 
 func player_die():
-	SoundPlayer.play_sound(SoundPlayer.HURT)
+	AudioPlayer.play_sound("HURT")
 	Events.disconnect("shoot", self, "snowball_knockback")
 	Events.emit_signal("player_died")
 
@@ -103,7 +103,7 @@ func input_jump_release():
 
 func input_double_jump():
 	if Input.is_action_just_pressed("ui_up") and double_jump > 0:
-		SoundPlayer.play_sound(SoundPlayer.JUMP)
+		AudioPlayer.play_sound("JUMP")
 		velocity.y = moveData.JUMP_FORCE
 		double_jump -= 1
 
@@ -128,7 +128,7 @@ func reset_double_jump():
 func input_jump():
 	if on_door: return
 	if Input.is_action_just_pressed("ui_up") or buffered_jump:
-		SoundPlayer.play_sound(SoundPlayer.JUMP)
+		AudioPlayer.play_sound("JUMP")
 		velocity.y = moveData.JUMP_FORCE
 		buffered_jump = false
 
