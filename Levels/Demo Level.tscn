@@ -39,11 +39,11 @@ angleOffset = 0
 
 [node name="Sprite" parent="RotatingFireBalls3" index="3" instance=ExtResource( 4 )]
 position = Vector2( -254, 134 )
-rotation = 28114.2
+rotation = 28439.9
 
 [node name="Sprite2" parent="RotatingFireBalls3" index="4" instance=ExtResource( 4 )]
 position = Vector2( 49, 134 )
-rotation = 28109.6
+rotation = 28435.3
 
 [node name="RotatingFireBalls" parent="RotatingFireBalls3" index="5" instance=ExtResource( 3 )]
 position = Vector2( 415, 117 )
@@ -57,39 +57,39 @@ angleOffset = 0
 
 [node name="Sprite" parent="RotatingFireBalls3/RotatingFireBalls2" index="3" instance=ExtResource( 4 )]
 position = Vector2( -36, -11 )
-rotation = 27728.1
+rotation = 28053.8
 
 [node name="Sprite2" parent="RotatingFireBalls3/RotatingFireBalls2" index="4" instance=ExtResource( 4 )]
 position = Vector2( 41, -12 )
-rotation = 27721.7
+rotation = 28047.4
 
 [node name="Sprite3" parent="RotatingFireBalls3/RotatingFireBalls2" index="5" instance=ExtResource( 4 )]
 position = Vector2( -114, 66 )
-rotation = 27717.6
+rotation = 28043.3
 
 [node name="Sprite4" parent="RotatingFireBalls3/RotatingFireBalls2" index="6" instance=ExtResource( 4 )]
 position = Vector2( -75, 65 )
-rotation = 27713.5
+rotation = 28039.2
 
 [node name="Sprite5" parent="RotatingFireBalls3/RotatingFireBalls2" index="7" instance=ExtResource( 4 )]
 position = Vector2( -35, 68 )
-rotation = 27708.6
+rotation = 28034.3
 
 [node name="Sprite6" parent="RotatingFireBalls3/RotatingFireBalls2" index="8" instance=ExtResource( 4 )]
 position = Vector2( 8, 67 )
-rotation = 27703.9
+rotation = 28029.6
 
 [node name="Sprite7" parent="RotatingFireBalls3/RotatingFireBalls2" index="9" instance=ExtResource( 4 )]
 position = Vector2( 51, 68 )
-rotation = 27701.2
+rotation = 28026.9
 
 [node name="Sprite8" parent="RotatingFireBalls3/RotatingFireBalls2" index="10" instance=ExtResource( 4 )]
 position = Vector2( 94, 69 )
-rotation = 27697.9
+rotation = 28023.6
 
 [node name="RotatingFireBalls3" parent="RotatingFireBalls3" index="7" instance=ExtResource( 3 )]
 position = Vector2( 568, 115 )
-rotation = 78.5
+rotation = 81.64
 count = 4
 angleOffset = 3.14
 
@@ -120,11 +120,11 @@ rotation = -4.71238
 
 [node name="Sprite2" parent="Spikes4" index="2" instance=ExtResource( 4 )]
 position = Vector2( 60.001, 146 )
-rotation = 27070.0
+rotation = 27395.7
 
 [node name="Sprite3" parent="Spikes4" index="3" instance=ExtResource( 4 )]
 position = Vector2( 58.9995, -72.0005 )
-rotation = 27065.5
+rotation = 27391.2
 
 [node name="FireGhost" parent="." index="17" instance=ExtResource( 8 )]
 position = Vector2( 327, -17 )
