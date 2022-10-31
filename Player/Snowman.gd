@@ -4,7 +4,7 @@ extends Sprite
 
 var tex : Image
 
-export(int) var radius setget set_radius, get_radius
+export(int) var radius=SnowBallData.MIN_RADIUS setget set_radius, get_radius
 var rotation_speed := 0.0
 var snowballsData := preload("res://Data/snowballs.tres")
 
@@ -17,7 +17,16 @@ func set_radius(v):
 
 func get_radius():
 	return radius
-	
+
+func isOnSnow() :
+	if owner.get_parent() == null : return false
+	var tm = owner.get_parent().get_node_or_null("TileMap")
+	if tm==null : return false
+	var p = tm.world_to_map(owner.global_position+Vector2.DOWN*3)
+#	print(tm.get_cell(p.x, p.y)==2)
+	return tm.get_cell(p.x, p.y) in [2, 29, 30]
+
+
 var counter := 0
 func _ready():
 	if Engine.is_editor_hint() : return
@@ -35,11 +44,12 @@ func _physics_process(delta):
 #	var col = player.get_last_slide_collision().collider as  CollisionObject2D 
 #	if col!=null : print(col.get_collision_layer_bit(23)) 
 	if player.is_on_floor() and (not player.is_on_wall()) and (Input.is_action_pressed("ui_left") != Input.is_action_pressed("ui_right")) :
-		counter+=1
 		rotation_speed += 3*delta * (1-2*Input.get_action_strength("ui_left"))
-		if counter==SnowBallData.STEPS_TO_GROW :
-			set_radius(radius+1)
-			counter=0
+		if isOnSnow() :
+			counter+=1
+			if counter==SnowBallData.STEPS_TO_GROW :
+				set_radius(radius+1)
+				counter=0
 	elif player.is_on_floor() or sign(player.velocity.x)!=sign(rotation_speed) : 
 		rotation_speed *= 0.6
 	if Input.is_action_just_pressed("ui_down") : set_radius(radius-1)

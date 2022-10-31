@@ -83,9 +83,14 @@ func climb_state(input):
 	velocity = input * moveData.CLIMB_SPEED
 	velocity = move_and_slide(velocity, Vector2.UP)
 
+func hurt() :
+	if get_node("CollisionShape2D/Sprite").snowballsData.canShoot :
+		Events.emit_signal("shoot", null)
+	else : player_die()
+
 func player_die():
 	SoundPlayer.play_sound(SoundPlayer.HURT)
-	queue_free()
+	Events.disconnect("shoot", self, "snowball_knockback")
 	Events.emit_signal("player_died")
 
 func connect_camera(camera):
@@ -147,8 +152,9 @@ func _on_JumpBufferTimer_timeout():
 	buffered_jump = false
 
 func snowball_knockback(direction) :
+	if not direction : return
 	has_shot = true
-	velocity += -direction*150
+	velocity = -direction*200
 
 func _on_CoyoteJumpTimer_timeout():
 	coyote_jump = false

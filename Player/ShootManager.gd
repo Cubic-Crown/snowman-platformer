@@ -7,6 +7,7 @@ func _ready() :
 	
 
 func shoot_handler(direction) :
+	if not direction : return
 	var n = snowball.instance() as RigidBody2D
 	n.linear_velocity = direction * 350
 	add_child(n)
