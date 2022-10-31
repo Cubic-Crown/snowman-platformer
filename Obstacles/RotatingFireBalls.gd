@@ -6,6 +6,7 @@ export(int) var count setget set_count
 export(float) var speed=1
 export(float) var spacing = 30 setget set_spacing
 export(int) var offset = 0 setget set_offset
+export(float) var angleOffset = 0 setget set_angle_offset
 
 var fireBall = preload("res://Obstacles/FireBall.tscn")
 
@@ -25,12 +26,18 @@ func set_count(v) :
 	count = v
 	update()
 
+
+func set_angle_offset(v) :
+	angleOffset = v
+	update()
+
 func _ready():
+	rotate(angleOffset)
 	update()
 
 
 func update() :
-	if $FireBallsParent == null : return
+	if get_node_or_null("FireBallsParent") == null : return
 	delete_children($FireBallsParent)
 	for i in range(count) :
 		var b = fireBall.instance()
