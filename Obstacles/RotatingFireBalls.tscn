@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Obstacles/obstacles.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Maps/Obstacles/obstacles.png" type="Texture" id=1]
 [ext_resource path="res://Obstacles/RotatingFireBalls.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -28,7 +28,7 @@ spacing = 9.0
 frames = SubResource( 2 )
 
 [node name="FireBallsParent" type="Node2D" parent="."]
-rotation = 2948.07
+rotation = 2953.83
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_mask = 0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://World/tiles_packed.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Maps/World/tiles_packed.png" type="Texture" id=1]
 [ext_resource path="res://World/Checkpoint.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
