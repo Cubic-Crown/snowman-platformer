@@ -51,7 +51,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Snowman Ball Z"
-run/main_scene="res://Levels/LevelSelection.tscn"
+run/main_scene="res://Menus/Menu.tscn"
 run/delta_sync_after_draw=true
 boot_splash/image="res://splash.png"
 boot_splash/use_filter=false
@@ -67,6 +67,8 @@ default_bus_layout="res://Audio/default_bus_layout.tres"
 Events="*res://MapUtilities/Events.gd"
 Transitions="*res://MapUtilities/Transitions2.tscn"
 AudioPlayer="*res://Assets/Audio/AudioPlayer.tscn"
+ChangeScene="*res://Loader/ChangeScene.gd"
+Save="*res://Loader/Save.gd"
 
 [display]
 

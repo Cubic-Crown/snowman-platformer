@@ -28,7 +28,7 @@ func checkWin() :
 	var p = tm.world_to_map(owner.global_position+Vector2.DOWN*3)
 	if tm.get_cell(p.x, p.y) in [36] :
 		Events.emit_signal("win")
-		Door.go_to_level(get_tree(), target_level_path)
+		ChangeScene.go_to_level(get_tree(), target_level_path)
 
 func isOnSnow() :
 	if owner.get_parent() == null : return false

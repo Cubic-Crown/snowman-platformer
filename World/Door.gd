@@ -23,21 +23,13 @@ func setLocked(v):
 
 var player = false
 
-static func go_to_level(tree, target_level_path):
-	Transitions.play_exit_transition()
-	tree.paused = true
-	yield(Transitions, "transition_completed")
-	Transitions.play_enter_transition()
-	tree.paused = false
-	tree.change_scene(target_level_path)
-
-func _process(delta):
+func _process(_delta):
 	if Engine.is_editor_hint() : return
 	if not player: return
 	if not player.is_on_floor(): return
 	if Input.is_action_just_pressed("ui_up"):
 		if target_level_path.empty(): return
-		go_to_level(get_tree(), target_level_path)
+		ChangeScene.go_to_level(get_tree(), target_level_path)
 
 func _on_Door_body_entered(body):
 	if locked : return
