@@ -23,12 +23,13 @@ script = ExtResource( 2 )
 count = 7
 speed = 1
 spacing = 9.0
+angleOffset = 0
 
 [node name="Block" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 
 [node name="FireBallsParent" type="Node2D" parent="."]
-rotation = 2953.83
+rotation = 3090.11
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_mask = 0

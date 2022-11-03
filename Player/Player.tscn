@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Entities/Players/FastPlayerMovementData.tres" type="Resource" id=1]
-[ext_resource path="res://Assets/Entities/Players/snowball.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Entities/Players/face.png" type="Texture" id=2]
 [ext_resource path="res://Player/Player.gd" type="Script" id=3]
 [ext_resource path="res://Player/Snowman.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Entities/Players/snowman_head.png" type="Texture" id=5]
 [ext_resource path="res://Player/ShootManager.gd" type="Script" id=6]
 [ext_resource path="res://Player/SnowBall.tscn" type="PackedScene" id=7]
 
@@ -33,17 +32,13 @@ script = ExtResource( 3 )
 moveData = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, -8 )
 shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="CollisionShape2D"]
 texture = SubResource( 5 )
 script = ExtResource( 4 )
-
-[node name="SnowmanHead" type="Sprite" parent="CollisionShape2D/Sprite"]
-visible = false
-texture = ExtResource( 5 )
+target_level_path = "res://Levels/LevelSelection.tscn"
 
 [node name="SnowmanHead2" type="Sprite" parent="CollisionShape2D/Sprite"]
 position = Vector2( 0, 0.971 )

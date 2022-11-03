@@ -79,11 +79,10 @@ position = Vector2( 99, 108 )
 
 [node name="RotatingFireBalls" parent="." index="11" instance=ExtResource( 11 )]
 position = Vector2( 463, -68 )
-angleOffset = 0
 
 [node name="Sprite" parent="." index="12" instance=ExtResource( 10 )]
 position = Vector2( 367, -94 )
-rotation = 33370.3
+rotation = 33594.6
 
 [node name="Tree" parent="." index="13" instance=ExtResource( 5 )]
 position = Vector2( 541, -20 )

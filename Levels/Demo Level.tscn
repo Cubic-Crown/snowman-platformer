@@ -27,69 +27,64 @@ tile_data = PoolIntArray( -262143, 25, 0, -262133, 12, 0, -262131, 11, 0, -26212
 position = Vector2( 320, 41 )
 count = 14
 offset = -7
-angleOffset = 0
 
 [node name="RotatingFireBalls2" parent="." index="8" instance=ExtResource( 3 )]
 position = Vector2( 224, -100 )
-angleOffset = 0
 
 [node name="RotatingFireBalls3" parent="." index="9" instance=ExtResource( 3 )]
 position = Vector2( 425, -100 )
-angleOffset = 0
 
 [node name="Sprite" parent="RotatingFireBalls3" index="3" instance=ExtResource( 4 )]
 position = Vector2( -254, 134 )
-rotation = 28439.9
+rotation = 39282.2
 
 [node name="Sprite2" parent="RotatingFireBalls3" index="4" instance=ExtResource( 4 )]
 position = Vector2( 49, 134 )
-rotation = 28435.3
+rotation = 39278.1
 
 [node name="RotatingFireBalls" parent="RotatingFireBalls3" index="5" instance=ExtResource( 3 )]
 position = Vector2( 415, 117 )
 count = 4
-angleOffset = 0
 
 [node name="RotatingFireBalls2" parent="RotatingFireBalls3" index="6" instance=ExtResource( 3 )]
 position = Vector2( 492, 117 )
 offset = -3
-angleOffset = 0
 
 [node name="Sprite" parent="RotatingFireBalls3/RotatingFireBalls2" index="3" instance=ExtResource( 4 )]
 position = Vector2( -36, -11 )
-rotation = 28053.8
+rotation = 38939.0
 
 [node name="Sprite2" parent="RotatingFireBalls3/RotatingFireBalls2" index="4" instance=ExtResource( 4 )]
 position = Vector2( 41, -12 )
-rotation = 28047.4
+rotation = 38933.3
 
 [node name="Sprite3" parent="RotatingFireBalls3/RotatingFireBalls2" index="5" instance=ExtResource( 4 )]
 position = Vector2( -114, 66 )
-rotation = 28043.3
+rotation = 38929.6
 
 [node name="Sprite4" parent="RotatingFireBalls3/RotatingFireBalls2" index="6" instance=ExtResource( 4 )]
 position = Vector2( -75, 65 )
-rotation = 28039.2
+rotation = 38926.0
 
 [node name="Sprite5" parent="RotatingFireBalls3/RotatingFireBalls2" index="7" instance=ExtResource( 4 )]
 position = Vector2( -35, 68 )
-rotation = 28034.3
+rotation = 38921.6
 
 [node name="Sprite6" parent="RotatingFireBalls3/RotatingFireBalls2" index="8" instance=ExtResource( 4 )]
 position = Vector2( 8, 67 )
-rotation = 28029.6
+rotation = 38917.5
 
 [node name="Sprite7" parent="RotatingFireBalls3/RotatingFireBalls2" index="9" instance=ExtResource( 4 )]
 position = Vector2( 51, 68 )
-rotation = 28026.9
+rotation = 38915.1
 
 [node name="Sprite8" parent="RotatingFireBalls3/RotatingFireBalls2" index="10" instance=ExtResource( 4 )]
 position = Vector2( 94, 69 )
-rotation = 28023.6
+rotation = 38912.1
 
 [node name="RotatingFireBalls3" parent="RotatingFireBalls3" index="7" instance=ExtResource( 3 )]
 position = Vector2( 568, 115 )
-rotation = 81.64
+rotation = 94.2
 count = 4
 angleOffset = 3.14
 
@@ -120,11 +115,11 @@ rotation = -4.71238
 
 [node name="Sprite2" parent="Spikes4" index="2" instance=ExtResource( 4 )]
 position = Vector2( 60.001, 146 )
-rotation = 27395.7
+rotation = 38354.0
 
 [node name="Sprite3" parent="Spikes4" index="3" instance=ExtResource( 4 )]
 position = Vector2( 58.9995, -72.0005 )
-rotation = 27391.2
+rotation = 38350.0
 
 [node name="FireGhost" parent="." index="17" instance=ExtResource( 8 )]
 position = Vector2( 327, -17 )

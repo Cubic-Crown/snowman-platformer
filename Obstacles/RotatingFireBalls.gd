@@ -7,6 +7,7 @@ export(float) var speed=1
 export(float) var spacing = 30 setget set_spacing
 export(int) var offset = 0 setget set_offset
 export(float) var angleOffset = 0 setget set_angle_offset
+export(bool) var crossed = false setget set_crossed
 
 var fireBall = preload("res://Obstacles/FireBall.tscn")
 
@@ -16,6 +17,10 @@ func _physics_process(delta):
 
 func set_spacing(v):
 	spacing=v
+	update()
+	
+func set_crossed(v):
+	crossed=v
 	update()
 
 func set_offset(v):
@@ -43,6 +48,11 @@ func update() :
 		var b = fireBall.instance()
 		b.position.x = (i+offset)*spacing
 		add_child_fr($FireBallsParent, b)
+	if crossed :
+		for i in range(count) :
+			var b = fireBall.instance()
+			b.position.y = (i+offset)*spacing
+			add_child_fr($FireBallsParent, b)
 
 
 static func delete_children(node):

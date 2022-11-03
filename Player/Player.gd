@@ -154,7 +154,7 @@ func _on_JumpBufferTimer_timeout():
 func snowball_knockback(direction) :
 	if not direction : return
 	has_shot = true
-	velocity = -direction*200
+	velocity = -direction*200*Vector2.DOWN + velocity.x*Vector2.RIGHT
 
 func _on_CoyoteJumpTimer_timeout():
 	coyote_jump = false

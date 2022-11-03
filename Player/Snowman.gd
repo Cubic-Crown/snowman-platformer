@@ -5,6 +5,8 @@ extends Sprite
 var tex : Image
 
 export(int) var radius=SnowBallData.MIN_RADIUS setget set_radius, get_radius
+export(String, FILE, "*.tscn") var target_level_path = ""
+
 var rotation_speed := 0.0
 var snowballsData := preload("res://Data/snowballs.tres")
 
@@ -18,13 +20,23 @@ func set_radius(v):
 func get_radius():
 	return radius
 
+
+func checkWin() :
+	if owner.get_parent() == null : return false
+	var tm = owner.get_parent().get_node_or_null("TileMap")
+	if tm==null : return false
+	var p = tm.world_to_map(owner.global_position+Vector2.DOWN*3)
+	if tm.get_cell(p.x, p.y) in [36] :
+		Events.emit_signal("win")
+		Door.go_to_level(get_tree(), target_level_path)
+
 func isOnSnow() :
 	if owner.get_parent() == null : return false
 	var tm = owner.get_parent().get_node_or_null("TileMap")
 	if tm==null : return false
 	var p = tm.world_to_map(owner.global_position+Vector2.DOWN*3)
 #	print(tm.get_cell(p.x, p.y)==2)
-	return tm.get_cell(p.x, p.y) in [2, 29, 30]
+	return tm.get_cell(p.x, p.y) in [2, 31, 32]
 
 
 var counter := 0
@@ -40,6 +52,7 @@ func shoot_handler(_direction) :
 
 func _physics_process(delta):
 	if Engine.is_editor_hint() : return
+	checkWin()
 	var player = get_parent().get_parent()
 #	var col = player.get_last_slide_collision().collider as  CollisionObject2D 
 #	if col!=null : print(col.get_collision_layer_bit(23)) 
