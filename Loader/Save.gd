@@ -15,6 +15,7 @@ func save_data():
 	var file = File.new()
 	file.open(SAVE_FILE, File.WRITE)
 	file.store_var(game_info)
+	file.close()
 	load_data()
 
 # Load the save file
@@ -37,6 +38,7 @@ func load_data():
 				"res://Levels/Lvl9.tscn"
 			]
 		}
+		file.close()
 		save_data()
 	else:
 		var error = file.open(SAVE_FILE, File.READ)
@@ -46,7 +48,7 @@ func load_data():
 			game_info = file.get_var()
 			print(game_info)
 			print("[Save] Save file loaded :)")
-		#game_info = file.get_var()
+		file.close()
 
 # Get the current level scene path
 func get_level() -> String:

@@ -1,8 +1,8 @@
 extends Node
 
 func _ready():
-	play_sound("HURT")
-
+	pass
+	
 func play_sound(sound_name):
 	var sound = get_node(sound_name)
 	sound.play()
