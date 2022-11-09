@@ -16,7 +16,7 @@ var has_shot = false
 onready var ladderCheck := $LadderCheck
 onready var jumpBufferTimer := $JumpBufferTimer
 onready var coyoteJumpTimer := $CoyoteJumpTimer
-onready var remoteTransform2D := $RemoteTransform2D
+onready var remoteTransform2D = get_node("CollisionShape2D/Sprite/RemoteTransform2D")
 
 func _ready() :
 	Events.connect("shoot", self, "snowball_knockback")

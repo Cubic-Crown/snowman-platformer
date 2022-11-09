@@ -13,3 +13,8 @@ data_*/
 *.png.import
 *.wav.import
 .vscode/
+
+# Krita-specific ingnores
+*.psd
+*.png~
+*.kra~

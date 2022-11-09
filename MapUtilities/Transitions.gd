@@ -2,6 +2,8 @@ extends CanvasLayer
 
 onready var animationPlayer = $AnimationPlayer
 
+enum transitions { ROUND, FADE }
+
 signal transition_completed
 
 func play_exit_transition():

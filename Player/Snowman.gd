@@ -1,5 +1,5 @@
 tool
-extends Sprite
+extends Node2D
 
 
 var tex : Image
@@ -80,14 +80,15 @@ func update() :
 		for y in range(s) :
 			var xx = x - s/2
 			var yy = y - s/2
-			var col = Color(223.0/255, 246.0/255, 245.0/255) if sqrt(xx*xx+yy*yy)<radius else Color(0,0,0,0)
+#			var col = Color(223.0/255, 246.0/255, 245.0/255) if sqrt(xx*xx+yy*yy)<radius else Color(0,0,0,0)
+			var col = Color(223.0/255, 246.0/255, 245.0/255) if sqrt(xx*xx+yy*yy)<radius-1.5 else Color(211/255.0,224/255.0,221/255.0) if sqrt(xx*xx+yy*yy)<radius-.5 else Color(0,0,0,0)
 #			var col = Color(223.0/255, 246.0/255, 245.0/255) if sqrt(xx*xx+yy*yy)<radius-2 else Color(52/255.0,85/255.0,81.0/255) if sqrt(xx*xx+yy*yy)<radius else Color(0,0,0,0)
 			img.set_pixel(x,y,col)
 	img.unlock()
 	var tex = ImageTexture.new()
 	tex.create_from_image(img)
 	tex.flags = 0
-	texture = tex
+	$Sprite.texture = tex
 	if not get_parent() is CollisionShape2D: return
 	get_parent().shape.radius = radius-1
-	get_parent().position.y = -radius+2
+	get_parent().position.y = -radius+1.5

@@ -38,6 +38,11 @@ _global_script_classes=[ {
 "class": "SnowBallData",
 "language": "GDScript",
 "path": "res://Data/SnowBallsData.gd"
+}, {
+"base": "CanvasLayer",
+"class": "TransitionManager",
+"language": "GDScript",
+"path": "res://MapUtilities/TransitionsManager.gd"
 } ]
 _global_script_class_icons={
 "Door": "",
@@ -45,16 +50,17 @@ _global_script_class_icons={
 "Player": "",
 "PlayerMovementData": "",
 "SnowBall": "",
-"SnowBallData": ""
+"SnowBallData": "",
+"TransitionManager": ""
 }
 
 [application]
 
 config/name="Snowman Ball Z"
-run/main_scene="res://Menus/Menu.tscn"
+run/main_scene="res://SplashScreen/SplashScreen.tscn"
 run/delta_sync_after_draw=true
-boot_splash/image="res://splash.png"
-boot_splash/use_filter=false
+boot_splash/show_image=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 config/quit_on_go_back=false
 
@@ -65,8 +71,8 @@ default_bus_layout="res://Audio/default_bus_layout.tres"
 [autoload]
 
 Events="*res://MapUtilities/Events.gd"
-Transitions="*res://MapUtilities/Transitions2.tscn"
 AudioPlayer="*res://Assets/Audio/AudioPlayer.tscn"
+Transitions="*res://MapUtilities/Transitions.tscn"
 ChangeScene="*res://Loader/ChangeScene.gd"
 Save="*res://Loader/Save.gd"
 

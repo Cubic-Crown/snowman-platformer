@@ -4,6 +4,7 @@ func _ready():
 	pass
 	
 func play_sound(sound_name):
+	return
 	var sound = get_node(sound_name)
 	sound.play()
 
